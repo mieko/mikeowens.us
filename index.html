@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mike Owens - Web Application Developer</title>
+
+    <style>
+      html {
+        padding: 1em 2em;
+        background-color: #71758b;
+      }
+
+      body {
+        font-size: 12pt;
+        font-family: sans-serif;
+        line-height: 1.7em;
+
+        background-color: #efefef;
+        color: #333;
+
+        max-width: 50em;
+        margin: auto;
+        padding: 4em;
+      }
+
+      #shade {
+        display: none;
+      }
+
+      #shade.active {
+        display: block;
+        position:fixed;
+
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+
+        background-color: black;
+        opacity: 0.66;
+        cursor: pointer;
+      }
+
+      h1 {
+        font-size: 32pt;
+      }
+
+      h2 {
+        margin-top: 1em;
+      }
+
+      h3 {
+        margin-bottom: 0.5em;
+        font-style: italic;
+      }
+
+      h3 time {
+        font-size: 12pt;
+        font-weight: normal;
+        color: #777;
+        line-height: 100%;
+        vertical-align: middle;
+        margin-left: 0.5em;
+      }
+
+      section {
+        margin-bottom: 1.5em;
+        line-height: 1.3em;
+        margin-left: 2em;
+      }
+
+      i.q {
+        font-size: 130%;
+        color: #779;
+        margin-left: -1em;
+        font-style: italic;
+      }
+
+      .project {
+        padding-bottom: 2em;
+        clear: both;
+      }
+
+      summary.intro {
+        margin: 3em auto;
+      }
+
+      img.thumb {
+        float: right;
+        cursor: pointer;
+        max-width: 150px;
+        clear: right;
+        margin-bottom: 20px;
+        box-shadow: 5px 5px 9px 0px rgba(135,135,135,0.85);
+      }
+
+      img.expanded {
+        max-width: 49em;
+        display: block;
+        position:fixed;
+        top: 2em;
+        z-index: 3;
+        cursor: pointer;
+      }
+    </style>
+
+    <script>
+
+
+      document.addEventListener('DOMContentLoaded', function() {
+
+        var shade = document.getElementById('shade');
+        var thumbs = document.querySelectorAll('img.thumb');
+
+        var deactivateAll = function() {
+          shade.classList.remove('active');
+          thumbs.forEach(function(thumb) {
+            thumb.classList.remove('expanded');
+            thumb.classList.add('thumb');
+          });
+        };
+        shade.addEventListener('click', deactivateAll);
+
+        thumbs.forEach(function(thumb) {
+          thumb.addEventListener('click', function(ev) {
+            var target = ev.target;
+            if (target.classList.contains('expanded')) {
+              deactivateAll();
+            } else {
+              target.classList.remove('thumb');
+              target.classList.add('expanded');
+              shade.classList.add('active');
+            }
+          });
+        });
+      });
+    </script>
+
+  </head>
+  <body>
+    <div id="shade"></div>
+
+    <h1>Mike A. Owens</h1>
+    <b>Web Application Developer</b> | <a href="mailto:mike@filespanker.com">mike@filespanker.com</a> | <a href="https://github.com/mieko">github.com/mieko</a>
+    <hr>
+
+    <summary class="intro">Hi!  I'm Mike Owens, a software developer in the US, particularly
+      focused on web applications.  I usually take contract developer positions locally or remote,
+      but have been more and more interested in more long-term situations.</summary>
+
+    <h2>Skills and Technologies</h2>
+    <hr>
+
+    <h3>Web Application Development</h3>
+    <p>I'm a full-stack web developer.  I've written and assisted the development in web
+      applications in Rails since 2006 (1.x!).  My most comfortable tools include Rails,
+      PostgreSQL, Linux, nginx, Redis, Sidekiq, SCSS and Vue.js + Vuex.</p>
+
+    <p>I've worked extensively with some of the alternatives to that list on client projects:
+       Node.js, React, mySQL, etc.</p>
+
+    <p>I often consult with customers trying to bring Rails 2.x/3.x applications up to modern
+      standards.</p>
+
+    <h3>Unix/Linux Development in C and C++</h3>
+    <p>I'm comfortable from the syscall level up with most Unixes.  I can track down performance
+      issues and bugs through VMs, interpreters and libc's.  Most development work I've done here
+      has been server side: supporting higher-level web applications with a performant native
+      backend for hot spots (image processing, etc).</p>
+
+    <h3>Open Source & Miscellaneous Contributions</h3>
+    <p>I try to contribute as much as I can to open source projects that I rely upon.</p>
+
+    <p>A while back, I spent some time making Ruby bindings to geometry libraries in C and C++.  I
+    was able to release the following two under the MIT license:</p>
+
+    <ul>
+      <li><a href="https://github.com/mieko/rbclipper">rbclipper</a>: Boolean Polygon Clipping</li>
+      <li><a href="https://github.com/mieko/rbpoly2tri">rbpoly2tri</a>: Constrained Delaunay Triangulation</li>
+    </ul>
+
+    <p>I was a contributor to ActionCable before it was merged into Rails proper, and have
+      multiple contributions around the Ruby and Rails ecosystem.</p>
+
+    <p>I've <a href="https://github.com/opal/opal/commits?author=mieko">contributed</a> pretty heavily to
+      Opal: the Ruby to Javascript compiler.</p>
+
+    <p>My <a href="https://github.com/mieko">GitHub account</a> has lot of pet and toy projects,
+      and also a few libraries I was contractually allowed to make public.</p>
+
+    <p><a href="https://github.com/mieko/sr-captcha">Here's an article</a> I wrote a few years ago
+      documenting how I broke The Silk Road's CAPTCHA.  It made the rounds on Hacker News and
+      Reddit for a week, and even got me interviews with Wired, CNN, and various other small tech
+      outlets.  Never did see an actual published interview, though.  The details were a bit too
+      nerdy, I think.
+    </p>
+
+    <h2>Selected Large Projects</h2>
+    <hr>
+
+    I mostly engage in few-month projects, a lot of which are so boring and specific to an industry
+    that it'd read like a dictionary.  Here are a few recent things I'm particularly proud of:
+
+
+    <div class="project">
+      <h3>meter.md <time>2012 - 2017</time></h3>
+      <img src="mm-dashboard-desktop.png" class="thumb">
+      <img src="mm-edit-user.png" class="thumb">
+      <img src="mm-locations-mobile.png" class="thumb">
+      <section><summary>meter.md was a resort management web app developed in partnership
+         with a large rental management firm in North Carolina ("tens of thousands
+         of short-stay rentals each year").  It tracks the lifecyle of maintenance tickets,
+         housekeeping and occupancy status, and inventory.</summary></section>
+
+      <section><i class="q">Role:</i> I was the initial and primary developer, having pitched it
+         to the client during a previous engagement.  I grew the team to four remote full-time
+         developers, and developed meter.md from 2011 until 2015.  The project was maintained and
+         extended under contract until 2018.</section>
+
+      <section><i class="q">Stack:</i> Rails 4.0 (later 5), PostgreSQL 9.4 through 10, and Elastic Search.
+         The front-end was based on Backbone.js: more of a "classic Javascript" style.</section>
+
+      <section><i class="q">Postmortem:</i> meter.md was one of the first responsive mobile web apps I used
+         that "felt right".  An easy, mobile-first UI experience was the huge driver for the project:
+         employees typically used the app while having their hands full in sometimes spotty cellular
+         service.
+
+         <p>In terms of customer impact and satisfaction, meter.md was a huge success.  I predict it
+            replaced 400 inter-organization phone calls a day with a mobile application that
+            tradesmen and housekeepers were comfortable using.
+
+         <p>meter.md still runs multiple instances behind firewalls today.  Its successor was razormd,
+            described below.
+      </section>
+    </div>
+
+    <div class="project">
+    <h3>razormd <time>2017 - 2019</time></h3>
+      <img src="rm-authmoji-notice.png" class="thumb">
+      <img src="rm-authmoji-select.png" class="thumb">
+
+    <section><summary> razormd was an ambitious project to greatly extend the capabilities
+       of meter.md into reservation tracking, employee scheduling, and shift from an "on-premises"
+       model to a SaaS.</summary></section>
+
+    <section><i class="q">Role:</i> Development lead, with a remote team of four very interdisciplinary
+      developers.</section>
+
+    <section><i class="q">Stack:</i> Rails 5 API backend (REST and GraphQL endpoints).  ES6 frontend
+       built with Vue.js, Vuex and SCSS.  Additional infrastructure included: PostgreSQL 10 with heavy
+       GIS components, Sidekiq and Redis.  Functional mobile apps for iOS and Android were produced
+       with PhoneGap.  Integrated Twilio for SMS and voice.  Tenanted application that auto-scaled
+       using Docker images and utilization monitoring.</section>
+
+    <section><i class="q">Features: </i>We got some really impressive things working quick:
+      <ul>
+        <li><b>BLE (Bluetooth Low-Energy) Beacon based tracking:</b> Each room in a test resort was
+            fitted with low-cost BLE beacons at the entrance.  A PhoneGap-extended version of the
+            razormd web app detected when a housekeeper or maintenance personnel were in
+            proximity.  This allowed employees to "check-in" to assignments implicitly without adding
+            app busywork, even when indoor GPS was too imprecise to pinpoint the location.
+          </li>
+        <li><b>Passwordless Accounts:</b> Employee turnover tends to be high in industries like
+            housekeeping.  Many employees are not comfortable with technology, even including email.
+            razormd's on-boarding and account recovery process used SMS as a lowest common
+            denominator, though preferred push notifications.  We extended "magic links" to SMS
+            while mitigating eavesdropping (SS7 attacks) via a shared secret: the user just selected
+            three emoji from a grid of twelve to log-in once clicking the link.
+          </li>
+
+        <li><b>Way-Boring Integration with COBOL-era Systems:</b> A lot of the travel industry
+          still communicates reservation and listing information via systems that were designed
+          in the 1980s and earlier (CRS and GDS systems).  I negotiated access to these systems and
+          then wrote the most soul-sucking adapters to protocols that should've been retired in 1995.</li>
+      </ul>
+    </section>
+
+    <section><i class="q">Postmortem:</i> The client and funding development partner was
+      acquired by a *very large* international company, and development was ceased during the
+      acquisition.
+
+      <p>This is a shame, because the project had a huge amount of potential.  It had some
+        interesting ideas that you wouldn't expect to see from a tame "back-office" app.
+    </section>
+  </div>
+
+
+  </body>
+</html>
