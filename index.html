@@ -117,10 +117,7 @@
     </style>
 
     <script>
-
-
       document.addEventListener('DOMContentLoaded', function() {
-
         var shade = document.getElementById('shade');
         var thumbs = document.querySelectorAll('img.thumb');
 
@@ -131,6 +128,7 @@
             thumb.classList.add('thumb');
           });
         };
+
         shade.addEventListener('click', deactivateAll);
 
         thumbs.forEach(function(thumb) {
