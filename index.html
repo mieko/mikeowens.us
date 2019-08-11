@@ -20,6 +20,7 @@
         max-width: 50em;
         margin: auto;
         padding: 4em;
+        border-radius: 10px;
       }
 
       #shade {
@@ -41,7 +42,16 @@
         cursor: pointer;
       }
 
+      img#mike-face {
+        width: 150px;
+        float: right;
+        margin-left: 1em;
+        margin-bottom: 1em;
+        box-shadow: 5px 5px 9px 0px rgba(135,135,135,0.85);
+      }
+
       h1 {
+        margin-top: 0;
         font-size: 32pt;
       }
 
@@ -92,6 +102,7 @@
         clear: right;
         margin-bottom: 20px;
         box-shadow: 5px 5px 9px 0px rgba(135,135,135,0.85);
+        margin-left: 1em;
       }
 
       img.expanded {
@@ -139,14 +150,25 @@
   </head>
   <body>
     <div id="shade"></div>
-
     <h1>Mike A. Owens</h1>
     <b>Web Application Developer</b> | <a href="mailto:mike@filespanker.com">mike@filespanker.com</a> | <a href="https://github.com/mieko">github.com/mieko</a>
     <hr>
 
-    <summary class="intro">Hi!  I'm Mike Owens, a software developer in the US, particularly
-      focused on web applications.  I usually take contract developer positions locally or remote,
-      but have been more and more interested in more long-term situations.</summary>
+    <summary class="intro"><img id="mike-face" src="mike-face.jpg">
+      <p>Hi!  I'm Mike Owens, a software developer in the US, particularly focused on web
+      applications.
+
+      <p>I love working on all areas of applications: from front-end work, API back-ends to devops.
+      I really like to see through complete features front-to-back.
+
+      <p>I think I'm most effective in teams of one to ten, particularly when I'm spending
+      most of my time interacting with technical people.
+
+      <p>I usually take contract developer positions locally or remote, but have been more and more
+        interested in more long-term situations lately.
+
+      <p>I'm really used to the remote thing, so relocation would have to be a really special offer.
+    </summary>
 
     <h2>Skills and Technologies</h2>
     <hr>
@@ -169,10 +191,18 @@
       backend for hot spots (image processing, etc).</p>
 
     <h3>Open Source & Miscellaneous Contributions</h3>
+    <img class="thumb" src="rf-physics.png"><img class="thumb" src="rf-ai.png"><img class="thumb" src="rf-pivot.png">
     <p>I try to contribute as much as I can to open source projects that I rely upon.</p>
 
-    <p>A while back, I spent some time making Ruby bindings to geometry libraries in C and C++.  I
-    was able to release the following two under the MIT license:</p>
+    <p>From 2009-2011, I spent some time with a game development group developing quick desktop
+      prototypes for mobile games.  They play-tested the prototypes and see what was worth pursuing
+      on mobile, which was much harder to develop on at the time.
+
+      <p>This work commonly had me deep inside Box2D, Chipmunk Physics, and Mesa's OpenGL ES
+        implementation to make sense of everything.
+
+      <p>During the process, I ended up with Ruby bindings to a few geometry and physics libraries
+      in C and C++.  I was able to release the following two under the MIT license:</p>
 
     <ul>
       <li><a href="https://github.com/mieko/rbclipper">rbclipper</a>: Boolean Polygon Clipping</li>
@@ -188,7 +218,8 @@
     <p>My <a href="https://github.com/mieko">GitHub account</a> has lot of pet and toy projects,
       and also a few libraries I was contractually allowed to make public.</p>
 
-    <p><a href="https://github.com/mieko/sr-captcha">Here's an article</a> I wrote a few years ago
+    <p><img src="sr.png" class="thumb">
+      <a href="https://github.com/mieko/sr-captcha">Here's an article</a> I wrote a few years ago
       documenting how I broke The Silk Road's CAPTCHA.  It made the rounds on Hacker News and
       Reddit for a week, and even got me interviews with Wired, CNN, and various other small tech
       outlets.  Never did see an actual published interview, though.  The details were a bit too
