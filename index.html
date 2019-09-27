@@ -4,25 +4,127 @@
     <title>Mike Owens - Web Application Developer</title>
 
     <style>
+      @font-face {
+        font-family: "social";
+        src: url("./icons/fonts/Socicon.woff2");
+      }
+
       html {
+        box-sizing: border-box;
         padding: 1em 2em;
-        background-color: #dfdfe5;
+        background-color: #f50;
       }
 
       body {
-        font-size: 12pt;
-        font-family: sans-serif;
+        margin: auto;
+        font-size: 14pt;
+        font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+                     "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+
         line-height: 1.7em;
 
-        background-color: #efefef;
-        box-shadow: 5px 5px 9px 0px rgba(135,135,135,0.85);
+        background-color: #eaeaea; /* it's in the game */
+        box-shadow: 5px 5px 6px -2px rgba(0,0,0,0.57);
         color: #333;
 
         max-width: 50em;
-
-        margin: auto;
+        margin-top: 4em;
+        margin-right: 4em;
         padding: 4em;
-        border-radius: 1px;
+        border-radius: 8px;
+      }
+
+      #card {
+        width: 460px;
+
+        margin-top: 0em;
+        margin-right: -6em;
+
+        border: 1px solid #ddd;
+        border-radius: 8px;
+
+        box-shadow: 5px 5px 6px -2px rgba(0,0,0,0.57);
+        transform: rotate(7deg);
+
+        background-color: #eaeaea; /* it's in the game */
+        background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(237,237,237,1) 100%);
+
+        float: right;
+      }
+
+      #card h1, #card h2 {
+        font-size: 20pt;
+        margin: 0;
+        margin-top: 0.5em;
+        margin-left: 20px;
+        color: #333;
+        text-shadow: 1px 1px rgba(0.2, 0.2, 0.2, 0.1);
+      }
+
+      #card h2 {
+        font-size: 12pt;
+        font-weight: normal;
+        margin-top: 0;
+        padding-top: 0;
+      }
+
+      #card img {
+        width: 115px;
+        height: 154px;
+        float: right;
+        margin: 20px;
+        box-shadow: 1px 1px 9px -2px rgba(0,0,0,0.57);
+      }
+
+      #card addr {
+        display: block;
+        clear: right;
+        margin-left: 20px;
+        margin-bottom: 20px;
+      }
+
+      #card #links {
+        font-family: Social;
+        display: block;
+        margin-left: 20px;
+        margin-top: 25px;
+        font-size: 200%;
+      }
+
+      #card #links a {
+        display: inline-block;
+        position: static;
+        padding: 10px 0.2em;
+        color: #aaa;
+        font-size: 20pt;
+
+        transition: all 250ms;
+      }
+
+      #card #links a:hover {
+        margin-right: 0.4em;
+
+        transition: all 250ms;
+        transform: scale(1.5) ;
+      }
+
+      #card #links a[href^="https://github.com/"]:hover { color:  #221e1b; }
+      #card #links a[href^="https://reddit.com/"]:hover { color: #e74a1e; }
+      #card #links a[href^="https://youtube.com/"]:hover { color:#e02a20; }
+      #card #links a[href^="https://news.ycombinator.com/"]:hover { color: #FF6601; }
+      #card #links a[href^="https://twitter.com/"]:hover { color:  #4da7de; }
+      #card #links a[href^="https://keybase.io/"]:hover { color: #FF7100; }
+
+
+      #card a {
+        text-decoration: none;
+        color: #00f;
+      }
+
+      #card::after {
+        display: block;
+        clear: both;
+        content: "";
       }
 
       #shade {
@@ -44,16 +146,9 @@
         cursor: pointer;
       }
 
-      img#mike-face {
-        width: 150px;
-        float: right;
-        margin-left: 1em;
-        margin-bottom: 1em;
-        box-shadow: 5px 5px 9px 0px rgba(135,135,135,0.85);
-      }
-
-      h1 {
+      body > h1 {
         margin-top: 0;
+        padding-top: 0;
         font-size: 32pt;
       }
 
@@ -83,7 +178,7 @@
 
       i.q {
         font-size: 130%;
-        color: #779;
+        color: #333;
         margin-left: -1em;
         font-style: italic;
       }
@@ -118,24 +213,28 @@
       }
 
       @media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
-        html {
-          background-color: #efefef;
-          padding: 0;
-          margin: 0;
-          box-shadow: none;
-        }
-
-        body {
-          background-color: #efefef;
-          margin: auto;
-          padding: 2em 1em;
-        }
-
         img.expanded {
           max-width: 90%;
           margin: auto;
         }
 
+        html, body {
+          margin: 0;
+          padding: 0;
+        }
+
+        body {
+          padding: 70px 10px 10px 10px;
+          margin: 70px 5px;
+        }
+
+        #card {
+          position: absolute;
+          top: -50px;
+          transform: rotate(7deg) scale(0.5);
+          margin: 0;
+          padding: 0;
+        }
       }
 
     </style>
@@ -174,12 +273,28 @@
   </head>
   <body>
     <div id="shade"></div>
-    <h1>Mike A. Owens</h1>
-    <b>Web Application Developer</b> | <a href="mailto:mike@mikeowens.us">mike@mikeowens.us</a>
-     | <a href="https://github.com/mieko">github.com/mieko</a>
-    <hr>
+    <div id="card">
+      <img id="mike-face" src="mike-face.jpg" title="The Author, bug-eyed.">
+      <h1>Mike A. Owens</h1>
+      <h2>Developer &amp; Code Archeologist</h2>
 
-    <summary class="intro"><img id="mike-face" src="mike-face.jpg">
+      <div id="links">
+        <a href="https://github.com/mieko" title="GitHub">&#xe032;</a>
+        <a href="https://youtube.com/code_dive" title="YouTube">&#xe0a5;</a>
+        <a href="https://reddit.com/u/miekao" title="reddit">&#xe06c;</a>
+        <a href="https://news.ycombinator.com/user?id=mieko" title="Hacker News">&#xe946;</a>
+        <a href="https://twitter.com/leetliekmiek" title="Twitter">&#xe08d;</a>
+        <a href="https://keybase.io/mieko" title="Keybase">&#xe048;</a>
+      </div>
+
+      <addr>UTC -0500, USA<br>
+        <a href="mailto:mike@mikeowens.us">mike@mikeowens.us</a>
+      </addr>
+    </div>
+
+    <h1>Portfolio</h1>
+
+    <summary class="intro">
       <p>Hi!  I'm Mike Owens, a software developer in the US, particularly focused on web
       applications.
 
