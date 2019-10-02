@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/mieko
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://mikeowens.us
+  * I am mieko (https://keybase.io/mieko) on keybase.
+  * I have a public key ASBsK-Pmb8T8F1s4I4YBz8K4tVwBnbamSYFO5LXoP9_tNAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01019b6051fa5da0c5a8d13fc1e14b5c5189e89a42c133eba0a8675e68c7f30c5c090a",
+      "host": "keybase.io",
+      "kid": "01206c2be3e66fc4fc175b38238601cfc2b8b55c019db6a649814ee4b5e83fdfed340a",
+      "uid": "1b5ad527345d63c83456f021e5e69d19",
+      "username": "mieko"
+    },
+    "merkle_root": {
+      "ctime": 1570000034,
+      "hash": "dc81b327dfc59eeafbdde38cdbf06b5112b0059ccdfb9e72d54dac2bc84362783e83e82b065e61bad3c0d044c5d8831de6ce672e8d931ac1b0497ba82c1071d8",
+      "hash_meta": "6bfd519731b34d64c150eaf3a704e770efdd34acdd81e18942f8b473cd95c65b",
+      "seqno": 7832591
+    },
+    "service": {
+      "entropy": "ok9BlcioqQlEcQllrehnAwH+",
+      "hostname": "mikeowens.us",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.5.0"
+  },
+  "ctime": 1570000043,
+  "expire_in": 504576000,
+  "prev": "b3918fb3fd71370a927139a0eb1f745c22b7bc9154ca75ff4830bf58ce2c5eb3",
+  "seqno": 20,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgbCvj5m/E/BdbOCOGAc/CuLVcAZ22pkmBTuS16D/f7TQKp3BheWxvYWTESpcCFMQgs5GPs/1xNwqScTmg6x90XCK3vJFUynX/SDC/WM4sXrPEIN0U0NXeAhvHGamrIiULAi0feE+Ne/55OiBAEGvQci2WAgHCo3NpZ8RArbRfNSJQXgeBgasBqW8hcujZU+/PAmJi0GebwBcKpN4Z0h6nRIMFdX5neR5XjNlzBcRMcTCJAMom4Hm0S5wCDahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIBxXCx0SD3I0pd22KapDnsG2uxg6TUnADsXhra5qKTE2o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/mieko
+
+==================================================================
